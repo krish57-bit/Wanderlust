@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "name": "majorproject",
   "version": "1.0.0",
   "main": "index.js",
@@ -18,7 +17,6 @@
     "method-override": "^3.0.0",
     "mongoose": "^8.16.0",
     "override": "^0.0.1"
-=======
   "engines": {
     "node": "v22.16.0"
   },
@@ -53,6 +51,5 @@
     "passport": "^0.7.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^8.0.0"
->>>>>>> fix/review-display
   }
 }
