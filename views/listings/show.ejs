@@ -1,9 +1,9 @@
 <% layout("/layouts/boilerplate") %>
 <script>
-  const mapToken = "<%= mapToken %>";
-  const listing = <%- JSON.stringify(listing) %>;
-</script>
+    const mapToken = "<%= process.env.MAP_TOKEN %>";
+    const listing = <%- JSON.stringify(listing) %>
 
+</script>
 <div class="row mt-3 show-container">
     <div class="col-sm-8 offset-sm-2 tittle">
         <h3>
@@ -15,9 +15,14 @@
             <img src="<%= listing.image.url %>" class="show-img card-img-top" alt="listing_image">
         </div>
         <div class="card-body">
-                    <p class="card-text">
-          Owned By <i><b><%= listing.owner?.username || 'Unknown' %></b></i>
-        </p>
+            <p class="card-text"> <b>Owned by : </b><i>
+                    <% if (listing.owner) { %>
+  @<%= listing.owner.username %>
+<% } else { %>
+  <i>Unknown Owner</i>
+<% } %>
+
+                </i> </p>
             <p class="card-text">
                 <b>Description : </b>
                 <%= listing.description %>
@@ -37,7 +42,7 @@
         </div>
     </div>
     <br>
-    <% if (currUser && listing.owner && listing.owner._id.equals(currUser._id)) { %>
+<% if(currUser && listing.owner && listing.owner._id.equals(currUser._id)) { %>
         <div class="btns">
             <a href="/listings/<%= listing._id %>/edit" class="col-sm-1 offset-sm-2">
                 <button class="edit-btn">
@@ -104,7 +109,7 @@
                             </p>
                         </div>
 
-                        <% if(currUser && review.author && review.author._id.toString() === currUser._id.toString()) { %>
+                        <% if(currUser && listing.owner._id.equals(currUser._id)) { %>
                             <form method="POST"
                             action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE"
                             class="p-2 my-3 mb-3">
