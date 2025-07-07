@@ -10,13 +10,10 @@
         if (!form.checkValidity()) {
           event.preventDefault()
           event.stopPropagation()
-<<<<<<< HEAD
-=======
         } else {
           document.querySelector(".loader").style.display = "inline";
           document.querySelector(".pageblur").style.opacity = "0.5"
           event.submitter.disabled = true;
->>>>>>> fix/review-display
         }
   
         form.classList.add('was-validated')
