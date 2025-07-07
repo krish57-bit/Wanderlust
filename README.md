@@ -4,7 +4,7 @@ Wanderlust is a travel platform that allows users to explore and share their fav
 
 ## Live Project
 
-Check out the live project: [Wanderlust Live]([https://wanderlust-hub.vercel.app/](https://wanderlust-g06k.onrender.com/))
+Check out the live project: [Wanderlust Live](https://wanderlust-g06k.onrender.com/)
 
 ## Technologies Used
 
